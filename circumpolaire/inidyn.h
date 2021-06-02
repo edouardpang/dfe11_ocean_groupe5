@@ -30,38 +30,21 @@
 !     taux(:,:) = tau * sin(aux * (gphif(:,:) - gphif(:,1)))
 !     tauy(ji,jj) = 0.0
 !
-! Alizés avec minimum à l'équateur et composante méridienne = dérivé de la composante zonale ! A vérifier
+! Alizés avec minimum à l équateur et composante méridienne = dérivé de la composante zonale ! A vérifier
 !
-      aux = 0.05 * (gphif(1,jpjm1) - gphif(1,1))
-      xlh = 800000.
-      DO jj = 1,jpj/2
-        DO ji = 1,jpi
-          zaux1 = gphiu(ji,jj) - gphif(1,jpj/2) + xlh
-          zaux2 = exp( - zaux1 **2 / aux / aux )
-          taux(ji,jj) = - tau * zaux2
-          tauy(ji,jj) = - tau * zaux2 * (-2.) * zaux1 /aux 
-        ENDDO
-      ENDDO
-      DO jj = jpj/2+1,jpj
-        DO ji = 1,jpi
-          zaux1 = gphiu(ji,jj) - gphif(1,jpj/2) - xlh
-          zaux2 = exp( - zaux1 **2 / aux / aux )
-          taux(ji,jj) = - tau * zaux2
-          tauy(ji,jj) = - tau * zaux2 * (-2.) * zaux1 /aux
-        ENDDO
-      ENDDO
+
 !
 ! Vent zonal gaussien centré au milieu du bassin
-!
-!     zaux0 = 0.20 * (gphif(1,jpjm1) - gphif(1,1))
-!     DO jj = 1,jpj
-!       DO ji = 1,jpi
-!         zaux1 = gphiu(ji,jj) - gphif(1,jpj/2)
-!         zaux2 = exp( - (zaux1/zaux0) **2 )
-!         taux(ji,jj) = - tau * zaux2
-!       ENDDO
-!     ENDDO
-!
+
+     zaux0 = 0.20 * (gphif(1,jpjm1) - gphif(1,1))
+     DO jj = 1,jpj
+       DO ji = 1,jpi
+         zaux1 = gphiu(ji,jj) - gphif(1,jpj/2)
+         zaux2 = exp( - (zaux1/zaux0) **2 )
+        taux(ji,jj) = - tau * zaux2
+       ENDDO
+     ENDDO
+
       CALL cdfparammsg(cdfparameters,'tau',tau)
       CALL cdfparammsg(cdfparameters,'itau_stop',FLOAT(itau_stop))
       icpp2 = 1

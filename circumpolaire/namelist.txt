@@ -5,14 +5,17 @@
 ! Ces valeurs par défaut sont écrasées par celles des namelists
 !
 ! NAMELIST /physics/ omega, g, theta, beta, oceanMeanDepth, islip, xnu, xnuh, xlamda, tau, itau_stop
-  g = 0.01
+  
 &physics
+!g = 10.
+tau = 0.004
+itau_stop = 50000
 /
 
 ! NAMELIST /time_axis/ dt, nit000, nitend, nwrite
 &time_axis
   nit000 = 1
-  nitend = 500
+  nitend = 5000
 /
 
 ! NAMELIST /space_axis/ dx, dy, ii0, ij0

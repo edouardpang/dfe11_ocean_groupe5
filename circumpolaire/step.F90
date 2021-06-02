@@ -573,8 +573,8 @@
 !
 ! second derivative
 !
-        DO jj = 2,jpj
-          DO ji = 2,jpi
+        DO jj = 2,jpjm1
+          DO ji = 2,jpim1
 #if defined tensorial
 !           ua(ji,jj,jk) = ua(ji,jj,jk) &
 !                           - (zkf( ji ,jj,jk)-zkf(ji,jj-1,jk)) / e2u(ji,jj) &

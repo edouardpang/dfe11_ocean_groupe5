@@ -11,6 +11,7 @@
       REAL aux, xlh, zaux0, zaux1, zaux2
       INTEGER i, j
       INTEGER icpp1, icpp2, ii0, ij0, id0, it
+      INTEGER iim0, iim1, ijm0, ijm1
       INTEGER ipi2, ipi2p1, ipi4
       INTEGER ijlim
 !
@@ -52,12 +53,12 @@
 !
 #if defined realWorld
 !
-      dx = 50000.
-      dy = 50000.
-      dt = 5000.
+      dx = 200000.
+      dy = 40000.
+      dt = 1000.
 ! 
-!     g = 10. 
-      g = 0.01
+!    g = 10. 
+     g = 0.01
 !
       omega = 2 * pi / rday
       f0 = 2. * omega * sin(theta)

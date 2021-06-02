@@ -1,6 +1,6 @@
 ! iiperio = 1 means x periodicity
 ! jiperio = 1 means y preiodicity
-      iiperio = 0
+      iiperio = 1
       ijperio = 0
 !
 ! Change ii0 and ij0 to move the left/bottom corner of the grid
