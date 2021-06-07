@@ -105,9 +105,9 @@
       tau = 0.0005
       itau_stop = nitend + 1 ! stops the wind after itau_stop
 ! islip = 1 pour glissement, islip = 0 pour frottement latéral
-      islip = 1
+      islip = 0
 ! Coefficient for linear drag at the bottom
-      xlamda = 0.0
+      xlamda = 0.1
 ! Arbitrary value for viscosity which ensure numerical stability
       xnu = dx*dy/800./dt
       xnuh = 0.
@@ -144,6 +144,7 @@
 ! Define the horizontal grid including x or y periodicity
 !
 #include "inigrid.h"
+          write(*,*)  'iiperio',iiperio,ijperio
 !
 ! Needed only for the netcdf file 
 !
@@ -163,6 +164,7 @@
 ! Define de geometry of the basin and its depth
 !
 #include "inidepth.h"
+          write(*,*)  'iiperio',iiperio,ijperio
 !
       DO jk=1,jpk
         IF (iiperio.EQ.1) THEN
@@ -179,10 +181,14 @@
 ! Define relaxation coefficient
 !
 #include "inirelax.h"
+          write(*,*)  'iiperio',iiperio,ijperio
+
 !
 ! Define the Coriolis parameter
 !
 #include "inicoriolis.h"
+          write(*,*)  'iiperio',iiperio,ijperio
+
 !
 ! ---------------------
 ! END OF USER SECTION 1
@@ -312,6 +318,8 @@
 ! -----------------------
 !
 #include "inidyn.h"
+          write(*,*)  'iiperio',iiperio,ijperio
+
 !
 ! ---------------------
 ! END OF USER SECTION 2
@@ -354,6 +362,8 @@
 !
 #endif
 !
+          write(*,*)  'iiperio',iiperio,ijperio
+
       RETURN
 !
       END

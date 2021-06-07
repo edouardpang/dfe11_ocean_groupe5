@@ -81,6 +81,8 @@
 !
 ! Output initial state
 !
+          write(*,*)  'iiperio',iiperio,ijperio
+
       CALL onc_newstep(netcdf_file,nit000,'0')
       CALL onc_putvarflt(netcdf_file,'UN',ucdf,wkk)
       CALL onc_putvarflt(netcdf_file,'VN',vcdf,wkk)
@@ -99,6 +101,8 @@
 ! Advance one time step
 !
         CALL step(jt)
+          write(*,*)  'iiperio',iiperio,ijperio
+
 !
 ! Output to file
 !

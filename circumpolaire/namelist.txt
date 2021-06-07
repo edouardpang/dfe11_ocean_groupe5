@@ -9,7 +9,7 @@
 &physics
 !g = 10.
 tau = 0.004
-itau_stop = 50000
+itau_stop = 500000
 /
 
 ! NAMELIST /time_axis/ dt, nit000, nitend, nwrite
