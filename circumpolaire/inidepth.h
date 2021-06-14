@@ -29,14 +29,14 @@
 !     mbathy(iil0,ijl0)=0.
 !     mbathy(iil0,ijl0-1)=0.
 !
-!     IF (iiperio.EQ.1) THEN
- !         mbathy( 1 ,:) = mbathy(jpim1,:)
-  !        mbathy(jpi,:) = mbathy(  2  ,:)
-   !   ENDIF
-    !  IF (ijperio.EQ.1) THEN
-     !     mbathy(:, 1 ) = mbathy(:,jpjm1)
-      !    mbathy(:,jpj) = mbathy(:,  2  )
-      !ENDIF
+     IF (iiperio.EQ.1) THEN
+          mbathy( 1 ,:) = mbathy(jpim1,:)
+         mbathy(jpi,:) = mbathy(  2  ,:)
+     ENDIF
+      IF (ijperio.EQ.1) THEN
+          mbathy(:, 1 ) = mbathy(:,jpjm1)
+          mbathy(:,jpj) = mbathy(:,  2  )
+      ENDIF
 !
 !
 ! Define the depth

@@ -15,3 +15,13 @@
 [07/06/21 12:25:16 UTC] 0 my_project_model test4.nc test4.dg -DwindStress -DrealWorld -DdiaTrends
 [07/06/21 12:31:01 UTC] 0 my_project_model test4.nc test4.dg -DwindStress -DrealWorld -DdiaTrends
 [07/06/21 15:27:01 UTC] 130 my_project_model test4.nc test4.dg -DwindStress -DrealWorld -DdiaTrends
+[07/06/21 15:43:14 UTC] 0 my_project_model test4.nc test4.dg -DwindStress -DrealWorld -DdiaTrends
+[07/06/21 15:45:06 UTC] 0 my_project_model test4.nc test4.dg -DwindStress -DrealWorld -DdiaTrends
+[07/06/21 15:53:58 UTC] 0 my_project_model test4.nc test4.dg -DwindStress -DrealWorld -DdiaTrends
+[07/06/21 16:39:57 UTC] 0 my_project_model test4.nc test4.dg -DwindStress -DrealWorld -DdiaTrends
+[07/06/21 20:43:25 UTC] 0 my_project_model test4.nc test4.dg -DwindStress -DrealWorld -DdiaTrends
+[07/06/21 21:57:40 UTC] 0 my_project_model test4.nc test4.dg -DwindStress -DrealWorld -DdiaTrends
+[14/06/21 18:43:31 UTC] 0 my_project_model test4.nc test4.dg -DwindStress -DrealWorld -DdiaTrends
+[14/06/21 18:54:18 UTC] 0 my_project_model test4.nc test4.dg -DwindStress -DrealWorld -DdiaTrends
+[14/06/21 19:07:27 UTC] 0 my_project_model test4.nc test4.dg -DwindStress -DrealWorld -DdiaTrends
+[14/06/21 19:13:44 UTC] 0 my_project_model test4.nc test4.dg -DwindStress -DrealWorld -DdiaTrends

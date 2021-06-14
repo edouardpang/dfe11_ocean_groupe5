@@ -50,24 +50,27 @@ class affichageDonnee:
 		plt.plot(self.index,self.df.KE_dissipation_damping,color='black',label ='KE_dissipation_damping')
 		plt.plot(self.index, self.df.KE_dissipation_bottom_friction,color='pink',label='KE_dissipation_bottom_friction')
 		# plt.plot(self.index,self.df.Potential_energy,label ='Potential_energy')
-		plt.plot(self.index,self.df.Kinetic,label ='Kinetic')
+		# plt.plot(self.index,self.df.Kinetic,label ='Kinetic')
+		plt.plot(self.index,self.df.sumDis,label ='Somme dissipation')
 		plt.xlabel('heures')
 		plt.legend()
 		plt.show()
+		plt.savefig('graph_testvent_50000')
 
 	def createDataFrame(self):
 		
 		self.df=pd.DataFrame(self.dict)
 		self.df.index=self.df.index*1000/3600
 		self.df.KE_dissipation_bottom_friction=-self.df.KE_dissipation_bottom_friction
-		self.df.Kinetic=self.df.Kinetic/1000
+		self.df.KE_dissipation_lateral_diffusion=-self.df.KE_dissipation_lateral_diffusion
+		self.df.Kinetic=self.df.Kinetic/30
 		
 
 	def affichageDonnee(self):
 		print(self.df.head())
 
 	def sommeDissipation(self):
-		self.df['sumDis']= self.df['KE_dissipation_bottom_friction']+self.df['KE_dissipation_damping']+self.df['KE_dissipation_lateral_diffusion']
+		self.df['sumDis']= self.df['KE_dissipation_bottom_friction']+self.df['KE_dissipation_lateral_diffusion']
 
 	def createExcel(self):
 		self.df.to_excel('Value.xlsx',index=False,sheet_name="xlambda_0.1")
@@ -83,5 +86,5 @@ if __name__ == '__main__':
 	test4.createDataFrame()
 	test4.sommeDissipation()
 	test4.graph()
-	test4.affichageDonnee()
+	# test4.affichageDonnee()
 	# test4.createExcel()

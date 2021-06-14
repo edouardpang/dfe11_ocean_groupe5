@@ -55,10 +55,10 @@
 !
       dx = 200000.
       dy = 40000.
-      dt = 1000.
+      dt = 30.
 ! 
-!    g = 10. 
-     g = 0.01
+      g = 10. 
+!     g = 0.01
 !
       omega = 2 * pi / rday
       f0 = 2. * omega * sin(theta)
@@ -107,7 +107,7 @@
 ! islip = 1 pour glissement, islip = 0 pour frottement latéral
       islip = 0
 ! Coefficient for linear drag at the bottom
-      xlamda = 0.1
+      xlamda = 0.001
 ! Arbitrary value for viscosity which ensure numerical stability
       xnu = dx*dy/800./dt
       xnuh = 0.
@@ -144,7 +144,7 @@
 ! Define the horizontal grid including x or y periodicity
 !
 #include "inigrid.h"
-          write(*,*)  'iiperio',iiperio,ijperio
+          
 !
 ! Needed only for the netcdf file 
 !
@@ -164,7 +164,7 @@
 ! Define de geometry of the basin and its depth
 !
 #include "inidepth.h"
-          write(*,*)  'iiperio',iiperio,ijperio
+          
 !
       DO jk=1,jpk
         IF (iiperio.EQ.1) THEN
@@ -181,13 +181,13 @@
 ! Define relaxation coefficient
 !
 #include "inirelax.h"
-          write(*,*)  'iiperio',iiperio,ijperio
+          
 
 !
 ! Define the Coriolis parameter
 !
 #include "inicoriolis.h"
-          write(*,*)  'iiperio',iiperio,ijperio
+          
 
 !
 ! ---------------------
@@ -318,7 +318,7 @@
 ! -----------------------
 !
 #include "inidyn.h"
-          write(*,*)  'iiperio',iiperio,ijperio
+          
 
 !
 ! ---------------------
@@ -362,7 +362,7 @@
 !
 #endif
 !
-          write(*,*)  'iiperio',iiperio,ijperio
+          
 
       RETURN
 !
